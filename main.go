@@ -182,6 +182,12 @@ func main() {
 		}
 	})
 
-	fmt.Println("🚀 Server running at http://localhost:8080")
-	http.ListenAndServe(":8080", nil)
+	/ ambil port dari environment variable
+port := os.Getenv("PORT")
+if port == "" {
+    port = "8080" // fallback untuk local
+}
+
+fmt.Println("🚀 Server running at port " + port)
+http.ListenAndServe(":" + port, nil)
 }
