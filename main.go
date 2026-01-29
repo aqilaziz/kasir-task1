@@ -1,14 +1,14 @@
 package main
 
 import (
-	"os"
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
 )
-				
+
 /*
 ========================
 MODEL
@@ -183,7 +183,7 @@ func main() {
 		}
 	})
 
-	/ ambil port dari environment variable
+	// ambil port dari environment variable
 port := os.Getenv("PORT")
 if port == "" {
     port = "8080" // fallback untuk local
